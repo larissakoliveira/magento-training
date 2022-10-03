@@ -6,16 +6,6 @@
         <referenceBlock name="authorization-link-login" remove="true"/>
         <referenceBlock name="currency" remove="true"/>
 
-        <!-- Create download app button -->
-        <!-- <referenceBlock name="header.links">
-            <block class="Magento\Framework\View\Element\Html\Link" name="button.link"  after="-">
-                <arguments>
-                    <argument name="label" xsi:type="string">DOWNLOAD APP</argument>
-                    <argument name="path" xsi:type="string">buttonpath</argument>
-                </arguments>
-            </block>
-        </referenceBlock> -->
-
         <!-- Header -->
         <referenceContainer name="panel.wrapper">
             <container name="panel-wrapper" htmlTag="div" htmlClass="your-class"/>
@@ -37,14 +27,18 @@
         <!-- Add icons -->
         <referenceContainer name="header-wrapper">
             <container name="header.left" label="headerLeft" htmlTag="div" htmlClass="header-left"/>
-            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="header-right"/>
+            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="header-right">
+                <block name="heart_icon" template="Magento_Theme::heart_icon.phtml" />
+                <!-- <block name="consultation" template="Magento_Theme::header/consultation.phtml" />
+                <block name="sign.in" template="Magento_Theme::header/sign_in.phtml" /> -->
+            </container>
         </referenceContainer>
 
         <!-- Move elements -->
         <move element="logo" destination="header.left"/>
         <move element="top.search" destination="header.left" after="logo"/>
         <move element="authorization-link-login" destination="header.right" before="minicart"/>
-        <!-- <move element="fav.icon" destination="header.right" after="authorization-link-login"/> -->
+        <move element="heart_icon" destination="header.right" after="authorization-link-login"/>
         <move element="minicart" destination="header.right"/>
     </body>
 </page>
