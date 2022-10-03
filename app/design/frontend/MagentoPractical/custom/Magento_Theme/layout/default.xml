@@ -29,8 +29,8 @@
             <container name="header.left" label="headerLeft" htmlTag="div" htmlClass="header-left"/>
             <container name="header.right" label="headerRight" htmlTag="div" htmlClass="header-right">
                 <block name="heart_icon" template="Magento_Theme::heart_icon.phtml" />
-                <!-- <block name="consultation" template="Magento_Theme::header/consultation.phtml" />
-                <block name="sign.in" template="Magento_Theme::header/sign_in.phtml" /> -->
+                <block name="book_consultation_icon" template="Magento_Theme::book_consultation_icon.phtml" />
+                <block name="profile_icon" template="Magento_Theme::profile_icon.phtml" />
             </container>
         </referenceContainer>
 
