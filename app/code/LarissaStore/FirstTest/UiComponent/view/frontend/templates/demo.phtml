@@ -1,0 +1,22 @@
+<?php
+/* @var LarissaStore\FirstTest\Block\Demo $block */
+?>
+<div id="uic-demo-container" data-bind="scope: 'uicdemo'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#uic-demo=container": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "uicdemo": {
+                        "component": "LarissaStore_UiComponent/js/view/demo",
+                        "config": {
+                            "template": "LarissaStore_UiComponent/demo"
+                        }
+                    }
+                }
+            }
+        }
+    }

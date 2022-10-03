@@ -1,0 +1,20 @@
+@color-red: #dc3c23;
+@color-red-100: #e51c1c;
+@color-red-50: #dd4747;
+
+
+@button-primary__background: @color-red;
+@button-primary__hover__color: @color-red-100;
+@button-border: @color-red-100;
+
+.action {
+    &.primary {
+        background-color: button-primary__background;
+        border-color: button-border;
+        border-radius: 20px;
+}
+    &.primary:hover {
+    background-color: button-primary__hover__color;
+}
+   
+}

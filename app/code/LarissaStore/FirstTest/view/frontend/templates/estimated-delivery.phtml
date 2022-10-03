@@ -1,0 +1,53 @@
+<div id="estimated-delivery-wrapper">
+  <form class="form deliverability">
+      <div class="field">
+          <div class="control">
+              <label for="zipcode">
+                  <span
+                    class="label">
+                    <!-- ko i18n: 'Estimate Shipping Date:' --><!-- /ko -->
+                  </span>
+                  <input
+                    name="zipcode" 
+                    type="text" 
+                    id="zipcode" 
+                    placeholder="Enter your zipcode" 
+                    data-validate="{required:true}"
+                    data-bind="value: zipcode"
+                  >
+              </label>
+          </div>
+      </div>
+      <div class="actions">
+          <button 
+            class="action primary" 
+            title="Calculate" 
+            type="submit" 
+            aria-label="Calculate"
+            data-bind="click: calculateEstimatedDelivery"
+            >
+              <span>
+                <!-- ko i18n: 'Calculate' --><!-- /ko -->
+              </span>
+          </button>
+      </div>
+  </form>
+</div>
+<div id="estimated-delivery" data-bind="scope: 'estimated-delivery'">
+  <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+  "#estimated-delivery":{
+    "Magento_Ui/js/core/app": {
+      "components": {
+        "estimated-delivery": {
+          "component": "Mcfadyen_EstimatedDelivery/js/shipping/estimated-delivery",
+          "template": "Mcfadyen_EstimatedDelivery/estimated-delivery"
+        }
+      }
+    }
+  }
+}
+</script>

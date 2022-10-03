@@ -1,0 +1,104 @@
+@color-black: #000000;
+@color-red-100: #e51c1c;
+@color-red-50: #dd4747;
+@color-white: #ffffff;
+
+@header__background-color: @color-black;
+@header-icons-color: @color-white;
+@header-icons-color-hover: @color-white;
+
+@button-primary__background: @color-black;
+@button-primary__hover__color: @color-red-100;
+@button-border: @color-red-100;
+
+.action {
+    &.primary {
+        background-color: button-primary__background;
+        border-radius: 20px;
+}
+    &.primary:hover {
+    background-color: button-primary__hover__color;
+}
+}
+
+& when (@media-common = true) {
+    .block-search {
+        .label:before {
+            .lib-css(color, @color-black);
+        }
+    }
+    .minicart-wrapper {
+        .action {
+            &.showcart {
+                &:before {
+                    .lib-css(color, @color-black);
+                }
+            }
+        }
+    }
+
+    .copyright {
+        background-color: @color-black;
+    }
+
+    .panel.wrapper {
+        background-color: @color-black;
+        max-width: 100%;
+    }
+
+    .not-logged-in {
+        font-weight: bold;
+        font-family: 'Roboto';
+    }
+
+}
+
+.header.content {
+    background-color: @color-white;
+    max-width: 100%;
+}
+
+.block-search {
+    min-width: 45%;
+}
+
+.block-search input {
+    border-radius: 20px;
+    padding-left: 30px;
+
+    &::placeholder {
+        color: #B8BBBD;
+        font-size: .8em;
+        font-weight: 700;
+    }
+}
+
+.page-header .header.panel {
+    background-color: @color-black;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header.panel > .header.links {
+    margin: 0 120px;
+    display: flex;
+    align-items: center;
+}
+
+.header.panel > .header.links > li > a {
+    background-color: #EDC5BD;
+    padding: 4px;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.product-info-sku {
+    color: @color-red-100;
+    font-weight: 900;
+}
+
+.block-search .action.search {
+    right: ~"calc(100% - 45px)";
+}
