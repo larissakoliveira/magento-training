@@ -6,28 +6,24 @@
         <referenceBlock name="authorization-link-login" remove="true"/>
         <referenceBlock name="currency" remove="true"/>
 
-        <!-- Move elements -->
-        <move element="logo" destination="header.left"/>
-        <move element="top.search" destination="header.left" after="logo"/>
-        <move element="authorization-link-login" destination="header.right" before="minicart"/>
-        <move element="fav.icon" destination="header.right" after="authorization-link-login"/>
-        <move element="minicart" destination="header.right"/>
-
         <!-- Create download app button -->
-        <referenceBlock name="header.links">
-            <block class="Magento\Framework\View\Element\Html\Link" name="button.link"  before="-">
+        <!-- <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="button.link"  after="-">
                 <arguments>
                     <argument name="label" xsi:type="string">DOWNLOAD APP</argument>
                     <argument name="path" xsi:type="string">buttonpath</argument>
                 </arguments>
             </block>
-        </referenceBlock>
+        </referenceBlock> -->
 
         <!-- Header -->
-            <referenceBlock name="top.links">
-                <referenceBlock name="register-link" remove="true"/>
-                <!-- <referenceBlock name="header" template="Magento_Theme::header.phtml"/> -->
+        <referenceContainer name="panel.wrapper">
+            <container name="panel-wrapper" htmlTag="div" htmlClass="your-class"/>
+            <referenceBlock name="header.links">
+                <referenceBlock name="register-link" remove="true" />
+                <referenceBlock name="header.links" template="Magento_Theme::header_text.phtml" />
             </referenceBlock>
+        </referenceContainer>
 
         <!-- Create logo -->
         <referenceBlock name="logo">
@@ -41,8 +37,14 @@
         <!-- Add icons -->
         <referenceContainer name="header-wrapper">
             <container name="header.left" label="headerLeft" htmlTag="div" htmlClass="header-left"/>
-            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="header-right">
-            </container>
+            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="header-right"/>
         </referenceContainer>
+
+        <!-- Move elements -->
+        <move element="logo" destination="header.left"/>
+        <move element="top.search" destination="header.left" after="logo"/>
+        <move element="authorization-link-login" destination="header.right" before="minicart"/>
+        <!-- <move element="fav.icon" destination="header.right" after="authorization-link-login"/> -->
+        <move element="minicart" destination="header.right"/>
     </body>
 </page>
